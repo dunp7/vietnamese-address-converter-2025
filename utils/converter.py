@@ -3,14 +3,17 @@ import os
 import pandas as pd
 from rapidfuzz import fuzz, process
 import logging
+import streamlit as st
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # utils/
 DATA_DIR = os.path.join(BASE_DIR, '..', 'data')       # ../data/
 
-
+print(DATA_DIR)
 logger = logging.getLogger(__name__)
 
-mapping_data = pd.read_json(os.path.join(DATA_DIR, 'ward_mappings.json'))
+@st.cache_data()
+def load_mapping_data():
+    return pd.read_json(os.path.join(DATA_DIR, 'ward_mappings.json'))
 
 def fuzzy_best_match(input_list, choices, top_k=3, score_cutoff=60):
     """
@@ -30,8 +33,7 @@ def fuzzy_best_match(input_list, choices, top_k=3, score_cutoff=60):
     return ", ".join(set([x[0] for x in results]))
 
 
-def get_new_address(address, components=None, top_k=3):
-    global mapping_data
+def get_new_address(address, mapping_data ,components=None, top_k=3):
     try:
         if components:
             add_components = components
