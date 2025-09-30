@@ -8,8 +8,8 @@ import streamlit as st
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # utils/
 DATA_DIR = os.path.join(BASE_DIR, '..', 'data')       # ../data/
 
-print(DATA_DIR)
 logger = logging.getLogger(__name__)
+
 
 @st.cache_data()
 def load_mapping_data():
