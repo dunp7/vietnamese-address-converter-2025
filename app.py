@@ -1,6 +1,6 @@
 import streamlit as st
 import logging 
-from utils.converter import get_new_address, load_mapping_data
+from src.converter import get_new_address, load_mapping_data
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'

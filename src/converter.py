@@ -5,7 +5,7 @@ from rapidfuzz import fuzz, process
 import logging
 import streamlit as st
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # utils/
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # src/
 DATA_DIR = os.path.join(BASE_DIR, '..', 'data')       # ../data/
 
 logger = logging.getLogger(__name__)
