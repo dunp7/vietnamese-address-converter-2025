@@ -50,7 +50,7 @@ streamlit run app.py
 ## 🎨 Streamlit Demo
 
 **Screenshot:**  
-![demo screenshot](img/main_screen.png)  
+![demo screenshot](img/main.png)  
 
 ---
 
